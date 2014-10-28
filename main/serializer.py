@@ -3,7 +3,10 @@ from main.models import Boat
 
 __author__ = 'htm'
 
-class BoatSerializer(serializers.HyperlinkedModelSerializer):
+class BoatSerializer(serializers.ModelSerializer):
     class Meta:
         model = Boat
-        fields = ('name_of_boat', 'capacity')
+        fields = (
+            'name_of_boat',
+            'capacity'
+        )
