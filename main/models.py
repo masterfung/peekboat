@@ -12,5 +12,18 @@ class Boat(models.Model):
                                                        self.capacity)
 
 
-# class Timeslot(models.Models):
+class Timeslot(models.Model):
+    start_time = models.DateTimeField()
+    duration = models.IntegerField(max_length=3)
+    availability = models.IntegerField(default=0)
+    boat = models.ForeignKey(Boat, related_name='boat', default=None)
+
+    def __unicode__(self):
+        return self.start_time
+
+
+# class Assignment(models.Model):
+#     boat = models.ForeignKey(Boat, related_name='boat')
 #
+#     def __unicode__(self):
+#         return self.boat
