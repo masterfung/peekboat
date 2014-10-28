@@ -7,6 +7,10 @@ from main.serializer import BoatSerializer
 from rest_framework import generics
 
 
+def home(request):
+    return render(request, 'home.html')
+
+
 class BoatList(generics.ListCreateAPIView):
     queryset = Boat.objects.all()
     serializer_class = BoatSerializer
