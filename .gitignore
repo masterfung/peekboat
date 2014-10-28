@@ -1,0 +1,4 @@
+# Created by .gitignore support plugin (hsz.mobi)
+local_settings.py
+/.idea
+*.pyc
