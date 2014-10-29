@@ -16,10 +16,10 @@ class Timeslot(models.Model):
     start_time = models.DateTimeField()
     duration = models.IntegerField(max_length=3)
     availability = models.IntegerField(default=0)
-    boat = models.ForeignKey(Boat, related_name='boat', default=None)
+    boat = models.ForeignKey(Boat, related_name='boat', default=None, blank=True)
 
     def __unicode__(self):
-        return self.start_time
+        return self.duration
 
 
 # class Assignment(models.Model):

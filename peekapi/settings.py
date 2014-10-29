@@ -87,6 +87,7 @@ USE_L10N = True
 
 USE_TZ = True
 
+FORMAT_MODULE_PATH = 'main.formats'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
