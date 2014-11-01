@@ -4,11 +4,11 @@ from django.db import models
 
 
 class Boat(models.Model):
-    name_of_boat = models.CharField(max_length=100)
+    name = models.CharField(max_length=100)
     capacity = models.IntegerField(max_length=3)
 
     def __unicode__(self):
-        return "{} has {} as its max capacity.".format(self.name_of_boat,
+        return "{} has {} as its max capacity.".format(self.name,
                                                        self.capacity)
 
 
@@ -16,10 +16,10 @@ class Timeslot(models.Model):
     start_time = models.DateField()
     duration = models.IntegerField(max_length=3)
     availability = models.IntegerField(default=0)
-    boat = models.ForeignKey(Boat, related_name='boat', default=None, blank=True)
+    boat = models.ForeignKey(Boat, related_name='boat', default=None, null=True, blank=True)
 
     def __unicode__(self):
-        return self.duration
+        return "start time: {}, duration: {}".format(self.start_time, self.duration)
 
 
 # class Assignment(models.Model):

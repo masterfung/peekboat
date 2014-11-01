@@ -9,7 +9,7 @@ class BoatSerializer(serializers.ModelSerializer):
         model = Boat
         fields = (
             'id',
-            'name_of_boat',
+            'name',
             'capacity'
         )
 
